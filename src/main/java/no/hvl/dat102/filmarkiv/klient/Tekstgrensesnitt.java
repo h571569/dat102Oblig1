@@ -4,7 +4,7 @@ import no.hvl.dat102.filmarkiv.adt.FilmarkivADT;
 import no.hvl.dat102.filmarkiv.impl.Film;
 import no.hvl.dat102.filmarkiv.impl.Sjanger;
 import java.util.Scanner;
-import static java.lang.Integer.parseInt;
+
 
 public class Tekstgrensesnitt {
 
@@ -20,13 +20,13 @@ public class Tekstgrensesnitt {
         String tittel = input.nextLine();
 
         System.out.println("filmnr:");
-        int filmnr = parseInt(input.nextLine());
+        int filmnr = input.nextInt();
 
         System.out.println("produsent:");
         String produsent = input.nextLine();
 
         System.out.println("lansering:");
-        int lansering = parseInt(input.nextLine());
+        int lansering = input.nextInt();
 
         System.out.println("filmselskap:");
         String filmselskap = input.nextLine();
