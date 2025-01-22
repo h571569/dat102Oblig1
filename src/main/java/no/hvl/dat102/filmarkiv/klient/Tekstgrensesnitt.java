@@ -34,7 +34,7 @@ public class Tekstgrensesnitt {
         System.out.println("sjanger:");
         Sjanger sjanger = Sjanger.valueOf(input.nextLine().toUpperCase());
 
-
+        input.close();
         return new Film(tittel,filmnr, produsent, lansering, filmselskap, sjanger);
     }
 
@@ -49,8 +49,12 @@ public class Tekstgrensesnitt {
     // TODO
 
         Film[] filmer = arkiv.soekTittel(delstreng);
-        for (Film film : filmer) {
-            System.out.println(film.toString());
+        if(filmer.length > 0) {
+            for (Film film : filmer) {
+                System.out.println(film.toString());
+            }
+        } else {
+            System.out.println("Ingen filmer med det søkeordet");
         }
 
 
@@ -58,12 +62,17 @@ public class Tekstgrensesnitt {
 
     // Skriver ut alle Filmer av en produsent (produsent er delstreng)
     public void skrivUtFilmProdusent(FilmarkivADT arkiv, String delstreng) {
-    // TODO
+        // TODO
 
         Film[] filmer = arkiv.soekProdusent(delstreng);
-        for (Film film : filmer) {
-            System.out.println(film.toString());
+        if (filmer.length > 0) {
+            for (Film film : filmer) {
+                System.out.println(film.toString());
+            }
+        } else {
+            System.out.println("Ingen filmer med det søkeordet");
         }
+
     }
 
     // Skriver ut en enkel statistikk som inneholder antall filmer totalt
