@@ -46,5 +46,11 @@ public interface FilmarkivADT {
      */
     int antall();
 
+    //Ekstra metode for å lese ut frekvens med sjangerene
+
+    /**
+     * Finner frekvensen av hver sjanger som er i arkivet
+     * @return Ett Map med Key av hver sjanger og Value for frekvensen av gitt sjanger
+     */
     Map<Sjanger, Integer> antallPerSjanger();
 }

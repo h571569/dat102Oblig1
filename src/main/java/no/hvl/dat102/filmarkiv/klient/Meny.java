@@ -30,6 +30,7 @@ public class Meny {
         tekstgr.skrivUtFilm(filmarkiv.finnFilm(2));
         System.out.println();
         tekstgr.skrivUtStatistikk(filmarkiv);
+        tekstgr.skrivUtFilm(tekstgr.lesFilm());
     // ..
     // TODO
     }

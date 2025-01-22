@@ -3,8 +3,8 @@ package no.hvl.dat102.filmarkiv.klient;
 import no.hvl.dat102.filmarkiv.adt.FilmarkivADT;
 import no.hvl.dat102.filmarkiv.impl.Film;
 import no.hvl.dat102.filmarkiv.impl.Sjanger;
-
 import java.util.Scanner;
+import static java.lang.Integer.parseInt;
 
 public class Tekstgrensesnitt {
 
@@ -14,7 +14,28 @@ public class Tekstgrensesnitt {
         // Usikker på oppgaven. Skal bruker kunne skrive inn tittel, produesnt, sjanger osv også skal vi:
         // return new film(tittel, produsent, sjanger ... etc) ?
 
-        return null;
+        Scanner input = new Scanner(System.in);
+
+        System.out.println("Tittel:");
+        String tittel = input.nextLine();
+
+        System.out.println("filmnr:");
+        int filmnr = parseInt(input.nextLine());
+
+        System.out.println("produsent:");
+        String produsent = input.nextLine();
+
+        System.out.println("lansering:");
+        int lansering = parseInt(input.nextLine());
+
+        System.out.println("filmselskap:");
+        String filmselskap = input.nextLine();
+
+        System.out.println("sjanger:");
+        Sjanger sjanger = Sjanger.valueOf(input.nextLine().toUpperCase());
+
+
+        return new Film(tittel,filmnr, produsent, lansering, filmselskap, sjanger);
     }
 
     // Skriver ut en film med alle opplysninger på skjerm (husk tekst for sjanger)

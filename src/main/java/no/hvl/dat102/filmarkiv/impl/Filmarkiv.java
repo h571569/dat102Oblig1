@@ -116,6 +116,9 @@ public class Filmarkiv implements FilmarkivADT {
         return antall;
     }
 
+
+    //Ekstra metode for å lese ut frekvens av sjangerne
+    //Litt leking med kode
     @Override
     public Map<Sjanger, Integer> antallPerSjanger() {
 
