@@ -81,7 +81,9 @@ public class Filmarkiv implements FilmarkivADT {
             }
         }
 
-        return Arrays.copyOf(filmer, count);
+        //kan gjøre begge deler
+//      return Arrays.copyOf(filmer, count);
+        return trimTab(filmer, count);
     }
 
     @Override
@@ -96,7 +98,9 @@ public class Filmarkiv implements FilmarkivADT {
                 count++;
             }
         }
+        //kan gjøre begge deler
         return Arrays.copyOf(filmer, count);
+//      return trimTab(filmer, count);
     }
 
     @Override
