@@ -26,8 +26,8 @@ public class Filmarkiv implements FilmarkivADT {
     }
 
 
-    private void utvid (Film[] film) {
-        Film[] newFilm = new Film[film.length*2];
+    private void utvid(Film[] film) {
+        Film[] newFilm = new Film[film.length * 2];
         System.arraycopy(film, 0, newFilm, 0, film.length);
         filmarkiv = newFilm;
     }
@@ -55,11 +55,11 @@ public class Filmarkiv implements FilmarkivADT {
     public boolean slettFilm(int filmnr) {
         boolean funnet = false;
         int i = 0;
-        while (!funnet && i<antall) {
+        while (!funnet && i < antall) {
             if (filmarkiv[i].getFilmnr() == filmnr) {
                 funnet = true;
-                filmarkiv[i] = filmarkiv[antall-1];
-                filmarkiv[antall-1] = null;
+                filmarkiv[i] = filmarkiv[antall - 1];
+                filmarkiv[antall - 1] = null;
                 antall--;
             } else {
                 i++;
@@ -104,7 +104,7 @@ public class Filmarkiv implements FilmarkivADT {
 
         int ant = 0;
         for (int i = 0; i < antall; i++) {
-            if(filmarkiv[i].getSjanger().equals(sjanger)) {
+            if (filmarkiv[i].getSjanger().equals(sjanger)) {
                 ant++;
             }
         }
@@ -117,19 +117,18 @@ public class Filmarkiv implements FilmarkivADT {
     }
 
     @Override
-    public void antallSjanger(){
+    public Map<Sjanger, Integer> antallPerSjanger() {
 
         Map<Sjanger, Integer> frekvens = new HashMap<>();
 
-        for(int i = 0; i < antall; i++){
-            if(!frekvens.containsKey(filmarkiv[i].getSjanger())){
+        for (int i = 0; i < antall; i++) {
+            if (!frekvens.containsKey(filmarkiv[i].getSjanger())) {
                 frekvens.put(filmarkiv[i].getSjanger(), 1);
             } else {
                 frekvens.put(filmarkiv[i].getSjanger(), frekvens.get(filmarkiv[i].getSjanger()) + 1);
             }
         }
-
-        System.out.println(frekvens);
-
+        return frekvens;
     }
+
 }
