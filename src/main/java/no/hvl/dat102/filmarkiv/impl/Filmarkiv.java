@@ -2,7 +2,7 @@ package no.hvl.dat102.filmarkiv.impl;
 
 import no.hvl.dat102.filmarkiv.adt.FilmarkivADT;
 
-import java.util.Arrays;
+import java.util.*;
 
 public class Filmarkiv implements FilmarkivADT {
 
@@ -114,5 +114,22 @@ public class Filmarkiv implements FilmarkivADT {
     @Override
     public int antall() {
         return antall;
+    }
+
+    @Override
+    public void antallSjanger(){
+
+        Map<Sjanger, Integer> frekvens = new HashMap<>();
+
+        for(int i = 0; i < antall; i++){
+            if(!frekvens.containsKey(filmarkiv[i].getSjanger())){
+                frekvens.put(filmarkiv[i].getSjanger(), 1);
+            } else {
+                frekvens.put(filmarkiv[i].getSjanger(), frekvens.get(filmarkiv[i].getSjanger()) + 1);
+            }
+        }
+
+        System.out.println(frekvens);
+
     }
 }

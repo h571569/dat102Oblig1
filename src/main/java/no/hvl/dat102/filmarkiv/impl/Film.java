@@ -85,12 +85,12 @@ public class Film {
     @Override
     public String toString() {
         return "Film {" +
-                "tittel='" + tittel + '\'' +
-                ", filmnr=" + filmnr +
-                ", produsent='" + produsent + '\'' +
-                ", lansering=" + lansering +
-                ", filmselskap='" + filmselskap + '\'' +
-                ", sjanger=" + sjanger +
+                "tittel = '" + tittel + '\'' +
+                ", filmnr = " + filmnr +
+                ", produsent = '" + produsent + '\'' +
+                ", lansering = " + lansering +
+                ", filmselskap = '" + filmselskap + '\'' +
+                ", sjanger = " + sjanger.toString().toLowerCase() +
                 '}';
     }
 }

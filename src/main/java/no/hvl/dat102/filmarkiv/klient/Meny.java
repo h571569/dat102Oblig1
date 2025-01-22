@@ -28,6 +28,8 @@ public class Meny {
 
     // Terste metodene
         tekstgr.skrivUtFilm(filmarkiv.finnFilm(2));
+        System.out.println();
+        tekstgr.skrivUtStatistikk(filmarkiv);
     // ..
     // TODO
     }
