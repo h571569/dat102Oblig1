@@ -32,25 +32,54 @@ class FilmarkivTest {
 
     @Test
     void leggTilFilm() {
+        assertEquals(5, filmarkiv.antall());
+        filmarkiv.leggTilFilm(new Film("Biler", 6, "adrian", 2003, "disney", KOMEDIE));
+        assertEquals(6, filmarkiv.antall());
     }
 
     @Test
     void slettFilm() {
+        filmarkiv.slettFilm(5);
+        assertEquals(4, filmarkiv.antall());
+        filmarkiv.slettFilm(2);
+        assertEquals(3, filmarkiv.antall());
     }
 
     @Test
     void soekTittel() {
+        Film[] filmer = filmarkiv.soekTittel("mis");
+        assertNotNull(filmer);
+        assertEquals(1, filmer.length);
+        assertEquals("Mission impossible", filmer[0].getTittel());
+        Film[] filmer1 = filmarkiv.soekTittel("i");
+        assertNotNull(filmer1);
+        assertEquals(3, filmer1.length);
+
     }
 
     @Test
     void soekProdusent() {
+        Film[] filmer = filmarkiv.soekProdusent("Dav");
+        assertNotNull(filmer);
+        assertEquals(1, filmer.length);
+        assertEquals("david", filmer[0].getProdusent());
+        Film[] filmer1 = filmarkiv.soekProdusent("d");
+        assertNotNull(filmer1);
+        assertEquals(2, filmer1.length);
     }
 
     @Test
     void antall() {
+        assertEquals(3,filmarkiv.antall(ACTION));
+        assertEquals(1,filmarkiv.antall(DRAMA));
+        assertEquals(1,filmarkiv.antall(SKREKK));
+
     }
 
     @Test
     void testAntall() {
+        assertEquals(5, filmarkiv.antall());
+        filmarkiv.slettFilm(5);
+        assertEquals(4, filmarkiv.antall());
     }
 }

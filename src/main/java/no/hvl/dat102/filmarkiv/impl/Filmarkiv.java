@@ -2,6 +2,8 @@ package no.hvl.dat102.filmarkiv.impl;
 
 import no.hvl.dat102.filmarkiv.adt.FilmarkivADT;
 
+import java.util.Arrays;
+
 public class Filmarkiv implements FilmarkivADT {
 
     private Film[] filmarkiv;
@@ -12,10 +14,22 @@ public class Filmarkiv implements FilmarkivADT {
         antall = 0;
     }
 
+    private Film[] trimTab(Film[] tab, int n) {
+        // n er antall elementer
+        Film[] nytab = new Film[n];
+        int i = 0;
+        while (i < n) {
+            nytab[i] = tab[i];
+            i++;
+        }
+        return nytab;
+    }
+
+
     private void utvid (Film[] film) {
         Film[] newFilm = new Film[film.length*2];
         System.arraycopy(film, 0, newFilm, 0, film.length);
-        film = newFilm;
+        filmarkiv = newFilm;
     }
 
     @Override
@@ -30,7 +44,7 @@ public class Filmarkiv implements FilmarkivADT {
 
     @Override
     public void leggTilFilm(Film nyFilm) {
-        if (antall >= filmarkiv.length) {
+        if (antall == filmarkiv.length) {
             utvid(filmarkiv);
         }
         filmarkiv[antall] = nyFilm;
@@ -58,27 +72,31 @@ public class Filmarkiv implements FilmarkivADT {
     public Film[] soekTittel(String delstreng) {
 
         Film[] filmer = new Film[antall];
+        int count = 0;
 
         for (int i = 0; i < antall; i++) {
             if (filmarkiv[i].getTittel().toLowerCase().contains(delstreng.toLowerCase())) {
-                filmer[i] = filmarkiv[i];
+                filmer[count] = filmarkiv[i];
+                count++;
             }
         }
 
-        return filmer;
+        return Arrays.copyOf(filmer, count);
     }
 
     @Override
     public Film[] soekProdusent(String delstreng) {
 
         Film[] filmer = new Film[antall];
+        int count = 0;
 
         for (int i = 0; i < antall; i++) {
             if (filmarkiv[i].getProdusent().toLowerCase().contains(delstreng.toLowerCase())) {
-                filmer[i] = filmarkiv[i];
+                filmer[count] = filmarkiv[i];
+                count++;
             }
         }
-        return filmer;
+        return Arrays.copyOf(filmer, count);
     }
 
     @Override

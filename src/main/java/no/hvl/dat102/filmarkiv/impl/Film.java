@@ -81,4 +81,16 @@ public class Film {
     public int hashCode() {
         return Objects.hashCode(filmnr);
     }
+
+    @Override
+    public String toString() {
+        return "Film {" +
+                "tittel='" + tittel + '\'' +
+                ", filmnr=" + filmnr +
+                ", produsent='" + produsent + '\'' +
+                ", lansering=" + lansering +
+                ", filmselskap='" + filmselskap + '\'' +
+                ", sjanger=" + sjanger +
+                '}';
+    }
 }
