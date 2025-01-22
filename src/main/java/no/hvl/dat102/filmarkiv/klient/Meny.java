@@ -33,8 +33,13 @@ public class Meny {
         Scanner input = new Scanner(System.in);
         while (i != 7) {
             System.out.println("Meny: ");
-            System.out.println("1. Les Film \n2. Skriv ut film \n3. Søk etter filmer med tittel " +
-                    "\n4. Søk etter filmer med produsent \n5. Skriv ut statistikk \n6. Legg til film \n7. Exit" );
+            System.out.println( "1. Les Film " +
+                                "\n2. Skriv ut film " +
+                                "\n3. Søk etter filmer med tittel " +
+                                "\n4. Søk etter filmer med produsent " +
+                                "\n5. Skriv ut statistikk " +
+                                "\n6. Legg til film " +
+                                "\n7. Exit" );
 
             String valg = input.nextLine();
 
