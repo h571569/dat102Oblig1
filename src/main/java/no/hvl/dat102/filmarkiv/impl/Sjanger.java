@@ -11,4 +11,8 @@ public enum Sjanger {
         }
         return null;
     }
+    public void skrivUt() {
+        Sjanger[] sjanger = Sjanger.values();
+    }
+
 }

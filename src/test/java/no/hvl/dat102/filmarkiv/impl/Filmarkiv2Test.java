@@ -10,11 +10,12 @@ import static org.junit.jupiter.api.Assertions.*;
 
 class Filmarkiv2Test {
 
-    private FilmarkivADT filmarkiv = new Filmarkiv2();
+    private FilmarkivADT filmarkiv;
 
 
     @BeforeEach
     void setUp() {
+        filmarkiv = new Filmarkiv2();
         filmarkiv.leggTilFilm(new Film("IT", 1, "ryan", 2008, "Lion", SKREKK));
         filmarkiv.leggTilFilm(new Film("Løvenes Konge", 2, "even", 1995, "Disney", ACTION));
         filmarkiv.leggTilFilm(new Film("Berseker", 3, "david", 2022, "star", DRAMA));

@@ -4,6 +4,7 @@ import no.hvl.dat102.filmarkiv.adt.FilmarkivADT;
 import no.hvl.dat102.filmarkiv.impl.Film;
 import no.hvl.dat102.filmarkiv.impl.Sjanger;
 
+import java.util.Arrays;
 import java.util.Map;
 import java.util.Scanner;
 
@@ -31,7 +32,8 @@ public class Tekstgrensesnitt {
         System.out.println("filmselskap:");
         String filmselskap = input.nextLine();
 
-        System.out.println("sjanger:");
+        System.out.println("Velg mellom Sjanger:");
+        System.out.println(Arrays.toString(Sjanger.values()));
         Sjanger sjanger = Sjanger.valueOf(input.nextLine().toUpperCase());
 
         return new Film(tittel,filmnr, produsent, lansering, filmselskap, sjanger);
