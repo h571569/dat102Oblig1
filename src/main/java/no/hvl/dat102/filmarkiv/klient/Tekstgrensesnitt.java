@@ -3,6 +3,8 @@ package no.hvl.dat102.filmarkiv.klient;
 import no.hvl.dat102.filmarkiv.adt.FilmarkivADT;
 import no.hvl.dat102.filmarkiv.impl.Film;
 import no.hvl.dat102.filmarkiv.impl.Sjanger;
+
+import java.util.Map;
 import java.util.Scanner;
 
 
@@ -87,7 +89,14 @@ public class Tekstgrensesnitt {
                 System.out.println("Det er " + arkiv.antall(sjanger) + " av " + sjanger.toString() + " i arkivet");
             }
         }
-//        System.out.println(arkiv.antallPerSjanger());
+
+        // Kan gjøre begge deler
+
+        Map<Sjanger, Integer> frekvens = arkiv.antallPerSjanger();
+
+        for(Map.Entry<Sjanger,Integer> entry : frekvens.entrySet()) {
+            System.out.println(entry.getKey() + ": " + entry.getValue());
+        }
 
 
     }

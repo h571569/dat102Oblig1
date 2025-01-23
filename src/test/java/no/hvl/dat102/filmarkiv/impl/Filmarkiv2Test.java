@@ -5,15 +5,16 @@ import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 
 import static no.hvl.dat102.filmarkiv.impl.Sjanger.*;
+import static no.hvl.dat102.filmarkiv.impl.Sjanger.ACTION;
 import static org.junit.jupiter.api.Assertions.*;
 
-class FilmarkivTest {
+class Filmarkiv2Test {
 
-    private FilmarkivADT filmarkiv;
+    private FilmarkivADT filmarkiv = new Filmarkiv2();
+
 
     @BeforeEach
     void setUp() {
-        filmarkiv = new Filmarkiv(5);
         filmarkiv.leggTilFilm(new Film("IT", 1, "ryan", 2008, "Lion", SKREKK));
         filmarkiv.leggTilFilm(new Film("Løvenes Konge", 2, "even", 1995, "Disney", ACTION));
         filmarkiv.leggTilFilm(new Film("Berseker", 3, "david", 2022, "star", DRAMA));
@@ -28,7 +29,6 @@ class FilmarkivTest {
         assertEquals(2, film.getFilmnr());
         assertEquals("Løvenes Konge", film.getTittel());
         assertNull(filmarkiv.finnFilm(6));
-        //legg til assert med object return
     }
 
     @Test
@@ -82,5 +82,8 @@ class FilmarkivTest {
         assertEquals(5, filmarkiv.antall());
         filmarkiv.slettFilm(5);
         assertEquals(4, filmarkiv.antall());
+    }
+    @Test
+    void antallPerSjanger() {
     }
 }
