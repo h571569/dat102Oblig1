@@ -45,6 +45,8 @@ class Filmarkiv2Test {
         assertEquals(4, filmarkiv.antall());
         filmarkiv.slettFilm(2);
         assertEquals(3, filmarkiv.antall());
+        assertTrue(filmarkiv.slettFilm(1));
+
     }
 
     @Test
