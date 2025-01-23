@@ -7,6 +7,7 @@ import java.util.*;
 public class Filmarkiv implements FilmarkivADT {
 
     private Film[] filmarkiv;
+
     private int antall;
 
     public Filmarkiv(int ant) {

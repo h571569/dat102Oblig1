@@ -45,7 +45,7 @@ public class Meny {
 
             switch (valg) {
                 case "1":
-                    tekstgr.skrivUtFilm(tekstgr.lesFilm());
+                    tekstgr.skrivUtFilm(tekstgr.lesFilm(filmarkiv.antall()+1));
                     break;
                 case "2":
                     System.out.println("Skriv inn filmnr mellom 1 og " + filmarkiv.antall());
@@ -71,7 +71,7 @@ public class Meny {
                     break;
                 case "6":
                     System.out.println("Legg til en ny film:");
-                    filmarkiv.leggTilFilm(tekstgr.lesFilm());
+                    filmarkiv.leggTilFilm(tekstgr.lesFilm(filmarkiv.antall()+1));
                     break;
                 case "7":
                     System.out.println("Lukker applikasjonen...");

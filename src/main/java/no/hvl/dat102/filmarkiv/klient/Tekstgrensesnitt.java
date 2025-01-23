@@ -11,7 +11,7 @@ import java.util.Scanner;
 public class Tekstgrensesnitt {
 
     // Leser inn opplysninger om en film fra tastatur og returnere et Film-objekt
-    public Film lesFilm() {
+    public Film lesFilm(int filmnr) {
         // TODO
         // Usikker på oppgaven. Skal bruker kunne skrive inn tittel, produesnt, sjanger osv også skal vi:
         // return new film(tittel, produsent, sjanger ... etc) ?
@@ -21,14 +21,12 @@ public class Tekstgrensesnitt {
         System.out.println("Tittel:");
         String tittel = input.nextLine();
 
-        System.out.println("filmnr:");
-        int filmnr = input.nextInt();
-
         System.out.println("produsent:");
         String produsent = input.nextLine();
 
         System.out.println("lansering:");
         int lansering = input.nextInt();
+        input.nextLine();
 
         System.out.println("filmselskap:");
         String filmselskap = input.nextLine();
@@ -36,7 +34,6 @@ public class Tekstgrensesnitt {
         System.out.println("sjanger:");
         Sjanger sjanger = Sjanger.valueOf(input.nextLine().toUpperCase());
 
-        input.close();
         return new Film(tittel,filmnr, produsent, lansering, filmselskap, sjanger);
     }
 
